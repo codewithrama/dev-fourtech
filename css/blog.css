@@ -1,0 +1,38 @@
+.blog-page .message-wrapper h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #3e8fee;
+    padding-top: 20%;
+    padding-bottom: 20%; /* Default padding for larger screens */
+    text-align: center;
+    margin: 0; /* To remove any default margin */
+    background-color: #ffff;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1024px) {
+    .blog-page .message-wrapper h2 {
+        font-size: 28px; /* Slightly smaller font for tablets */
+        padding-top: 25%; /* Adjust padding for medium-sized screens */
+        padding-bottom: 25%;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-page .message-wrapper h2 {
+        font-size: 24px; /* Even smaller font size for mobile screens */
+        padding-top: 25%; /* More space for smaller screens */
+        padding-bottom: 25%;
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-page .message-wrapper h2 {
+        font-size: 20px; /* Smaller font for very small screens */
+        padding-top: 35%; /* Larger padding for smaller screens */
+        padding-bottom: 35%;
+        margin-top: 25px;
+
+    }
+}

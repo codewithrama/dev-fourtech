@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IT Staffing </title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="./index.js" defer></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/service.css" />
+    <link rel="stylesheet" href="./css/itstaffing.css">
+
+</head>
+
+<body id="body">
+    <div id="ft-loader">
+        <div class="loader-logo"><i>ft</i></div>
+        <div class="loader-spinner"></div>
+    </div>
+    <header class="main-header">
+        <div class="nav">
+            <div class="logo">
+                <h4>FourTech</h4>
+            </div>
+            <button class="hamburger-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="menu-container">
+                <div class="navitems">
+                    <nav class="item"><a href="./index.html">Home</a></nav>
+                    <nav class="item"><a href="./service.html">Service</a></nav>
+                    <nav class="item"><a href="./Itstaffing.html">IT Staffing</a></nav>
+                    <nav class="item"><a href="#">About us</a></nav>
+                    <nav class="item"><a href="./blog.html">Blog</a></nav>
+                    <nav class="item"><a href="./contact.html">Contact</a></nav>
+                </div>
+                <div class="client-actions">
+                    <button class="login button" type="button"><a href="./login.html">login</a></button>
+                    <button class="signup button" onclick="showForm()">Signup</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- The Enquiry form to show -->
+
+        <div id="overlay" onclick="closeForm()"></div>
+
+
+        <div id="enquiryForm">
+            <img class="close_icon" src="./src/images/close.jpg" onclick="closeForm()">
+            <h2>Get Started</h2>
+            <form onsubmit="submitForm(event)" id="enquiry_Form">
+                <label for="name">Name: <span class="important">*</span></label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Email: <span class="important">*</span></label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="phone">Phone number: <span class="important">*</span></label><br>
+                <input type="tel" id="phone" name="phone" required><br><br>
+                <div class="form-group">
+                    <label for="services">Service Intrested: <span class="important">*</span></label><br>
+                    <select id="services" name="services" required>
+                        <option value="" disabled selected>Select a Service</option>
+                        <option value="Website Development">Web Development</option>
+                        <option value="App Development">App Development</option>
+                        <option value="Software Development">Software Development</option>
+                        <option value="SEO">SEO</option>
+                        <option value="Digital Marketing">Digital Marketing</option>
+                        <option value="IT Staffing">IT Staffing</option>
+                    </select>
+                </div>
+                <br>
+                <!-- reCAPTCHA v2 widget -->
+                <div class="g-recaptcha itstaffing_captcha" data-sitekey="6LcACqEqAAAAAGUhcWFSO0A9KfYFG3JkuRLM0C89"></div>
+                <br>
+                <button type="submit" class="submit-btn">
+                    Submit
+                    <div class="loader" id="loader"></div>
+                </button>
+            </form>
+
+            <div id="submissionMessage" style="display: none; color: green; margin-top: 15px;">
+                Form submitted!
+            </div>
+        </div>
+
+
+        <section class="service-intro">
+            <div class="service-text">
+                <h3>Elevate Your Hiring Potential: Choose the Right IT Staffing Service</h3>
+                <p>At Four Technologies, we deliver tailored IT staffing solutions to drive your business success.</p>
+            </div>
+
+            <div class="btn scroll-animation fade-in-down">
+                <a href="#itstaffing_form"><button>Hire Top Talent
+                        <img src="./src/images/Group 60.png" alt="Hire Top Talent"></button></a>
+            </div>
+        </section>
+
+        <section id="itstaffing-overview">
+            <!-- First stat-item with image, percentage, and description -->
+            <div class="stat-item scroll-animation fade-in-up">
+                <div class="stat-header">
+                    <div class="stat-img">
+                        <img class="counter-img" src="./src/images/fluent_arrow-growth-24-filled.png"
+                            alt="Growth Arrow">
+                    </div>
+                    <div class="counter-value">
+                        <h2>98%</h2>
+                    </div>
+                </div>
+                <div class="counter-description">
+                    <p>Your growth rate</p>
+                </div>
+            </div>
+
+            <!-- Second stat-item with value and label -->
+            <div class="stat-item scroll-animation fade-in-up">
+                <div class="stat-header">
+                    <div class="stat-img">
+                        <img class="counter-img" src="./src/images/business-team-icon 1.png" alt="Group">
+                    </div>
+                    <div class="counter-value">
+                        <h2>1M+</h2>
+                    </div>
+                </div>
+                <div class="counter-description">
+                    <p>Talent Connections (Aspiring)</p>
+                </div>
+            </div>
+            <!-- Third stat-item with value and label -->
+            <div class="stat-item scroll-animation fade-in-up">
+                <div class="stat-header">
+                    <div class="stat-img">
+                        <img class="counter-img" src="./src/images/Group 1000003999.png" alt="Group">
+                    </div>
+                    <div class="counter-value">
+                        <h2>8+</h2>
+                    </div>
+                </div>
+                <div class="counter-description">
+                    <p>Countries in Our Vision</p>
+                </div>
+            </div>
+
+            <!-- Fourth stat-item with value and label -->
+            <div class="stat-item scroll-animation fade-in-up">
+                <div class="stat-header">
+                    <div class="stat-img">
+                        <img class="counter-img" src="./src/images/three-stars-icon 1.png" alt="Group">
+                    </div>
+                    <div class="counter-value">
+                        <h2>12+</h2>
+                    </div>
+                </div>
+                <div class="counter-description">
+                    <p>Industries Targeted</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="step-section  scroll-animation fade-in-up">
+            <h3>Company Expertise in recruiting Top Talent</h3>
+            <div class="step-container  scroll-animation fade-in-up">
+                <div class="step-card">
+                    <div class="step-image">
+                        <img src="./src/images/itstaffing-1.png">
+                    </div>
+                    <div class="step-text">
+                        <h5>Tell us what you need</h5>
+                        <p>We'll get in touch with you to understand your requirements and preferences.</p>
+                    </div>
+                </div>
+
+                <div class="arrow-image">
+                    <img src="./src/images/arrow-line.png">
+                </div>
+
+
+                <div class="step-card">
+                    <div class="step-image">
+                        <img src="./src/images/itstaffing-2.png">
+                    </div>
+                    <div class="step-text">
+                        <h5>Meet the top talent</h5>
+                        <p>Get 3 to 5 suitable, pre-vetted candidates in 48 hours.</p>
+                    </div>
+                </div>
+
+                <div class="arrow-image  scroll-animation fade-in-left">
+                    <img src="./src/images/arrow-line.png">
+                </div>
+
+
+                <div class="step-card">
+                    <div class="step-image">
+                        <img src="./src/images/itstaffing-3.png">
+                    </div>
+                    <div class="step-text">
+                        <h5>Interview with ease</h5>
+                        <p>Choose the candidate that aligns with your needs and we'll arrange an interview.</p>
+                    </div>
+                </div>
+
+                <div class="arrow-image">
+                    <img src="./src/images/arrow-line.png">
+                </div>
+
+                <div class="step-card">
+                    <div class="step-image">
+                        <img src="./src/images/itstaffing-4.png">
+                    </div>
+                    <div class="step-text">
+                        <h5>Hire with confidence</h5>
+                        <p>Once you decide, we'll take care of the onboarding process for you.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="it-staffing">
+            <h1 class="scroll-animation fade-in-up">We Staff IT Roles Across Any Industry</h1>
+            <p class="scroll-animation fade-in-up">Finding the right IT talent for your business, no matter the sector.
+            </p>
+            <div class="carousel-container scroll-animation fade-in-up">
+                <div class="carousel">
+                    <div class="carousel-item"><img src="./src/images/budget.png" alt="Finance">
+                        <p>Finance</p>
+                    </div>
+                    <div class="carousel-item"><img src="./src/images/healthcare.png" alt="Healthcare">
+                        <p>Healthcare</p>
+                    </div>
+                    <div class="carousel-item"><img src="./src/images/retailer.png" alt="Retail">
+                        <p>Retail</p>
+                    </div>
+                    <div class="carousel-item"><img src="./src/images/education.png" alt="Education">
+                        <p>Education</p>
+                    </div>
+                    <div class="carousel-item"><img src="./src/images/tech.png" alt="Technology">
+                        <p>Technology</p>
+                    </div>
+                    <div class="carousel-item"><img src="./src/images/cybersecurity_14793173.png" alt="Cyber security">
+                        <p>Cyber Security</p>
+                    </div>
+                    <div class="carousel-item"><img src="./src/images/internet.png" alt="Telecommunicatios">
+                        <p>Telecommunications</p>
+                    </div>
+                    <div class="carousel-item"><img src="./src/images/deep-learning_8786279.png"
+                            alt="Artificial Intelligence">
+                        <p>Artificial Intelligence</p>
+                    </div>
+                    <div class="carousel-item"><img src="./src/images/supply-chain_18479073.png" alt="Supply chain">
+                        <p> Supply Chain and Logistics</p>
+                    </div>
+                    <div class="carousel-item"><img src="./src/images/content_11497709.png" alt="Entertainment">
+                        <p>Entertainment and Media</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="staffing-type">
+            <h3 class="scroll-animation fade-in-up ">Whatever Type Of IT Role You Need,<br> We’ve Got You</h3>
+            <div class="type-container scroll-animation fade-in-up">
+                <div class="type-item">
+                    <div class="type-image">
+                        <img src="src/images/contract-icon 1.png">
+                    </div>
+                    <div class="type-description">
+                        <h4>Contract</h4>
+                        <p>We staff IT professionals on a short-term contracts, and we’ll help you find the perfect
+                            candidate fit for your hiring needs.</p>
+                    </div>
+                </div>
+
+                <div class="type-item">
+                    <div class="type-image">
+                        <img src="src/images/contract-to-permanent.png">
+                    </div>
+                    <div class="type-description">
+                        <h4>Contract-To-Permanent</h4>
+                        <p>As an IT staffing company, we’ll help you find IT professionals who have the work ethic &
+                            culture<br> fit for long-term to permanent positions. </p>
+                    </div>
+                </div>
+
+
+                <div class="type-item">
+                    <div class="type-image">
+                        <img src="src/images/permanent.png">
+                    </div>
+                    <div class="type-description">
+                        <h4>Permanent</h4>
+                        <p>Need IT staffing for permanent positions? From entry level to C-suite, we’ll help you find
+                            the skillset for your team.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="itstaffing-form scroll-animation fade-in-up">
+            <div class="itstaffing-container">
+                <div class="itstaffing-para">
+                    <h3>How to Find the Best Employees for Your Business: Four Technologies' Complete Guide</h3>
+                    <p>While we may not have years of experience yet, we’re passionate, driven, and committed to
+                        delivering exceptional results. Every journey starts somewhere, and we’re excited to partner
+                        with you to build success together.
+                    </p>
+
+                    <p>To give you a helping hand, we’ve put together a free complete guide to how to find the best
+                        employees, whether you’re a Fortune 1000 company or a small business looking for your first
+                        employee. Here is what you’ll learn</p>
+                    <ol>
+                        <li><strong>Assess and Define Your Hiring Needs:</strong> Identify the roles that will drive
+                            your business forward.</li>
+                        <li><strong> an Attractive Employer Brand:</strong> Learn how to stand out as an employer of
+                            choice.</li>
+                        <li><strong>Master Sourcing Techniques: </strong> Discover where and how to find top talent.
+                        </li>
+                        <li><strong>Screen and Assess Candidates Effectively: </strong> Use the best methods to evaluate
+                            potential hires.</li>
+                        <li><strong>Make the Right Hire:</strong> Finalize your choice with confidence.</li>
+                    </ol>
+
+                    <p>Take the first step toward building your dream team by filling out the form below and downloading
+                        your free guide today!
+                    </p>
+                </div>
+
+
+
+                <div id="itstaffing_form_container">
+                    <h2 class="scroll-animation fade-in-up ">Hire someone With An IT Staffing Service</h2>
+                    <form onsubmit="it_submission(event)" id="itstaffing_form" class="scroll-animation fade-in-up ">
+                        <div class="name">
+                            <input type="text" id="first_name" name="first_name" required placeholder="First name">
+                            <input type="text" id="last_name" name="last_name" required placeholder="Last name">
+                        </div>
+                        <input type="email" id="email_input" name="email" class="input" placeholder="Email">
+                        <input type="tel" id="phone_input" name="phone" class="input" required
+                            placeholder="Enter your Phone number With country code">
+                        <input type="text" id="company_name" name="company_name" class="input" required
+                            placeholder="Company Name">
+                        <input type="text" id="job_title" name="job_title" class="input" required
+                            placeholder="Job Title">
+                        <div class="hire-form-group">
+                            <select id="hire" name="type_of_hire" required aria-placeholder="Type of Hire">
+                                <option value="" disabled selected>Type of Hire</option>
+                                <option value="Contract">Contract</option>
+                                <option value="Contract-To-Permanent">Contract-To-Permanent</option>
+                                <option value="Permanent">Permanent</option>
+                            </select>
+                        </div>
+                        <div class="hiring_details">
+                            <div class="hiring-details-form-group">
+                                <select id="number_of_openings" name="number_of_openings">
+                                    <option value="" disabled selected>No of Openings</option>
+                                    <option value="1 to 10">1 - 10</option>
+                                    <option value="11 to 20">11 - 20</option>
+                                    <option value="21 to 30">21 - 30</option>
+                                    <option value="30+">30+</option>
+                                </select>
+                            </div>
+                            <input type="text" id="location" required placeholder="Location" name="job_location">
+                        </div>
+                        <textarea id="job_description" name="job_description" rows="6" cols="50"
+                            placeholder="Enter the job description here" required></textarea>
+
+
+                        <div class="g-recaptcha" data-sitekey="6LcACqEqAAAAAGUhcWFSO0A9KfYFG3JkuRLM0C89"></div>
+                        <br>
+                        <button type="submit" id="itstaffing_submit">Submit</button>
+                    </form>
+                    <div id="form_loader" style="display: none; color:#3498db;">Loading...</div>
+                    <!-- <div id="form_submissionMessage" style="display: none; color: green;">Thank you for your submission!</div> -->
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="faq-section scroll-animation fade-in-up">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-card scroll-animation fade-in-up">
+                <div class="faq-header" onclick="toggleAnswer(0)">
+                    <h3>How do I know if I need IT staffing services for my business?</h3>
+                    <button class="toggle-btn">&#8594;</button>
+                </div>
+                <div class="faq-answer" id="answer0">
+                    <p>If your business is experiencing a shortage of technical expertise, struggling to manage IT
+                        projects, or needing support for digital transformation, IT staffing services can help. We
+                        assist businesses in filling key roles with highly skilled IT professionals to meet specific
+                        needs, whether it's for short-term projects or long-term growth.</p>
+                </div>
+            </div>
+
+            <div class="faq-card scroll-animation fade-in-up ">
+                <div class="faq-header" onclick="toggleAnswer(1)">
+                    <h3>What types of IT professionals can Four Technologies help me hire?</h3>
+                    <button class="toggle-btn">&#8594;</button>
+                </div>
+                <div class="faq-answer" id="answer1">
+                    <p>Four Technologies offers staffing solutions for a wide range of IT roles, including software
+                        developers, system administrators, network engineers, cybersecurity experts, data analysts, and
+                        IT project managers. We work with you to understand your requirements and find the right talent
+                        to meet your specific technical needs.</p>
+                </div>
+            </div>
+
+            <div class="faq-card scroll-animation fade-in-up">
+                <div class="faq-header" onclick="toggleAnswer(2)">
+                    <h3>How long does it take to find the right IT candidate for my company?</h3>
+                    <button class="toggle-btn">&#8594;</button>
+                </div>
+                <div class="faq-answer" id="answer2">
+                    <p>The timeline for finding the right IT candidate depends on the role and the complexity of your
+                        requirements. On average, we can present qualified candidates within 1-2 weeks. However, more
+                        specialized roles may take longer as we ensure that we match the best talent with your needs.
+                        Our team is committed to delivering fast and efficient results while maintaining high-quality
+                        standards.</p>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <section class="get-in-touch scroll-animation fade-in-up">
+            <h3>Get in Touch with us</h3>
+            <div class="contact-us">
+                <h5>Hi! We’d love to </br>hear from you.</h5>
+                <p>Are you ready to innovate, scale, optimize, or transform with us?</p>
+            </div>
+            <div class="contact-button scroll-animation fade-in-up">
+                <div class="contact-button">
+                    <a href="./contact.html">
+                        <button>Contact Us</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer_container scroll-animation fade-in-up">
+            <div class="company_footer">
+                <div class="footer_text">
+                    <h3><img src="./src/images/logo.png" alt> Four
+                        Technologies</h3>
+                    <p class="footer_para">Innovative Saas Empower
+                        Business
+                        driving Growth Agility and Seamless
+                        collaboration
+                        Effectivilly</p>
+                </div>
+                <div class="sociallogo scroll-animation fade-in-up">
+                    <a href="https://wa.me/919080372255?text=Hi%20Four%20Technologies"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
+                            <path fill="white"
+                                d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                        </svg></a>
+                    <a href="https://www.instagram.com/four_technologies/"><svg xmlns="http://www.w3.org/2000/svg"
+                            width="48" height="48" viewBox="0 0 24 24">
+                            <g fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="1.5" color="white">
+                                <path
+                                    d="M2.5 12c0-4.478 0-6.718 1.391-8.109S7.521 2.5 12 2.5c4.478 0 6.718 0 8.109 1.391S21.5 7.521 21.5 12c0 4.478 0 6.718-1.391 8.109S16.479 21.5 12 21.5c-4.478 0-6.718 0-8.109-1.391S2.5 16.479 2.5 12" />
+                                <path d="M16.5 12a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0m1.008-5.5h-.01" />
+                            </g>
+                        </svg></a>
+                    <a href="https://www.linkedin.com/company/four-technologies/"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 16 16">
+                            <path fill="white" fill-rule="evenodd"
+                                d="M3 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm1.102 4.297a1.195 1.195 0 1 0 0-2.39a1.195 1.195 0 0 0 0 2.39m1 7.516V6.234h-2v6.579zM6.43 6.234h2v.881c.295-.462.943-1.084 2.148-1.084c1.438 0 2.219.953 2.219 2.766c0 .087.008.484.008.484v3.531h-2v-3.53c0-.485-.102-1.438-1.18-1.438c-1.079 0-1.17 1.198-1.195 1.982v2.986h-2z"
+                                clip-rule="evenodd" />
+                        </svg></a>
+                </div>
+
+            </div>
+
+            <div class="company_links">
+                <h4>Company</h4>
+                <nav class="item"><a href="./index.html">Home</a></nav>
+                <nav class="item"><a href="./service.html">Service</a></nav>
+                <nav class="item"><a href="./Itstaffing.html">IT Staffing</a></nav>
+                <nav class="item"><a href="#">About us</a></nav>
+                <nav class="item"><a href="./blog.html">Blog</a></nav>
+                <nav class="item"><a href="./contact.html">Contact</a></nav>
+
+            </div>
+
+            <div class="company_newsletter">
+                <h3>Our Newsletter</h3>
+                <p>Signup for our latest news & articles. We won’t send you spam mails.</p>
+                <form id="newsletterForm" onsubmit="submitNewsletterForm(event)">
+                    <label for="name">Name: <span class="important">*</span></label><br>
+                    <input type="text" class="newsletter_input" id="newsletter_name" name="name" required><br><br>
+
+                    <label for="email">Email: <span class="important">*</span></label><br>
+                    <input type="email" class="newsletter_input" id="newsletter_email" name="email" required><br><br>
+
+                    <!-- Shared reCAPTCHA widget -->
+                    <div id="recaptcha-container" class="g-recaptcha"
+                        data-sitekey="6LcACqEqAAAAAGUhcWFSO0A9KfYFG3JkuRLM0C89"></div><br><br>
+
+                    <button type="submit" class="submit-btn subscribe">
+                        Subscribe
+                        <div class="loader" id="loader"></div>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>@2024-2025 Four Technologies,All rights reserved.</p>
+        </div>
+
+    </footer>
+
+
+    <!--For sending emails -->
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("jUxTX0vLRos2YwVPB"); // Your EmailJS user ID
+        })();
+    </script>
+
+
+</body>
+
+</html>
